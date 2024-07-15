@@ -1,5 +1,6 @@
 fun main(args: Array<String>){
-    booleans.run();
+//    booleans.run();
+    ifelse.run();
 }
 
 
