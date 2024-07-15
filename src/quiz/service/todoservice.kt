@@ -53,9 +53,7 @@ fun update(){
     val updatedLocation = readlnOrNull().orEmpty()
 
     if(lis.activities.containsKey(userUpdate)){
-        act.name = updatedActivity
-        act.place = updatedLocation
-        lis.activities[act.name] = act.place
+        lis.activities[updatedActivity] = updatedLocation
         println("MESSAGE = Activity '$userUpdate' updated to '$updatedActivity' at '$updatedLocation'.")
     } else {
         println("not found any activities")
