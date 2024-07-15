@@ -1,7 +1,24 @@
 package quiz.service
 
 val act = quiz.model.activity
-val lis = quiz.model.myList
+val lis = quiz.model.MyList
+
+fun menu(){
+    println("1.add")
+    println("2.update")
+    println("3.delete")
+    println("4.get all")
+    println("5.get by name")
+    println("which one ?")
+    val userChoice = readlnOrNull()
+    when(userChoice){
+        "1" -> addActivity()
+        "2" -> update()
+        "3" -> delete()
+        "4" -> getAllActivities()
+        "5" -> getByName()
+    }
+}
 
 fun addActivity(){
     print("enter your actions : ")
@@ -15,8 +32,6 @@ fun addActivity(){
         lis.activities[act.name] = act.place
         print("ADDED = ")
         println(act.formatted())
-        print("LIST = ")
-        println(lis.activities.toString())
         doAgain()
     } else {
         println("Can't be null")
@@ -24,12 +39,58 @@ fun addActivity(){
     }
 }
 
+fun getAllActivities(){
+    println(lis.formatted())
+}
+
+fun update(){
+    print("insert the name you want to update =")
+    val userUpdate = readlnOrNull()
+    print("insert new activity= ")
+    val updatedActivity = readlnOrNull()
+    print("insert new location= ")
+    val updatedLocation = readlnOrNull()
+
+    lis.activities.forEach{(k,v) ->
+        if(k == userUpdate){
+            k.replace(k,updatedActivity.orEmpty())
+            v.replace(v,updatedLocation.orEmpty())
+        }
+    }
+    getAllActivities()
+    doAgain()
+}
+
+fun delete(){
+    print("insert the name you want to delete =")
+    val userUpdate = readlnOrNull()
+    lis.activities.forEach{(k,v) ->
+        if(k == userUpdate){
+            lis.activities.remove(k)
+        }
+    }
+    getAllActivities()
+    doAgain()
+}
+
+fun getByName(){
+    print("insert the name you want to delete =")
+    val userUpdate = readlnOrNull()
+    lis.activities.forEach{(k,v) ->
+        if(k == userUpdate){
+            println("{" +
+                    "${k}=${v}" +
+                    "}")
+        }
+    }
+    doAgain()
+}
 fun doAgain(){
     println("try again?")
     val ask = readlnOrNull();
     when(ask){
         "no" -> System.exit(0)
-        "yes" -> addActivity()
+        "yes" -> menu()
         null -> println("wrong input")
     }
 }
