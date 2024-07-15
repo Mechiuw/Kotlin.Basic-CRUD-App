@@ -41,21 +41,24 @@ fun addActivity(){
 
 fun getAllActivities(){
     println(lis.formatted())
+    doAgain()
 }
 
 fun update(){
     print("insert the name you want to update =")
     val userUpdate = readlnOrNull()
     print("insert new activity= ")
-    val updatedActivity = readlnOrNull()
+    val updatedActivity = readlnOrNull().orEmpty()
     print("insert new location= ")
-    val updatedLocation = readlnOrNull()
+    val updatedLocation = readlnOrNull().orEmpty()
 
-    lis.activities.forEach{(k,v) ->
-        if(k == userUpdate){
-            k.replace(k,updatedActivity.orEmpty())
-            v.replace(v,updatedLocation.orEmpty())
-        }
+    if(lis.activities.containsKey(userUpdate)){
+        act.name = updatedActivity
+        act.place = updatedLocation
+        lis.activities[act.name] = act.place
+        println("MESSAGE = Activity '$userUpdate' updated to '$updatedActivity' at '$updatedLocation'.")
+    } else {
+        println("not found any activities")
     }
     getAllActivities()
     doAgain()
