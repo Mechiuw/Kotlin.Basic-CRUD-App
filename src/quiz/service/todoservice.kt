@@ -1,7 +1,10 @@
 package quiz.service
 
-val act = quiz.model.activity
-val lis = quiz.model.MyList
+import quiz.model.activity
+import quiz.model.MyList
+
+val act = activity
+val lis = MyList
 
 fun menu(){
     println("1.add")
@@ -40,20 +43,32 @@ fun addActivity(){
 }
 
 fun getAllActivities(){
+    println("ALL ACTIVITIES : ")
     println(lis.formatted())
     doAgain()
 }
 
 fun update(){
     print("insert the name you want to update =")
-    val userUpdate = readlnOrNull()
+    val userUpdate = readlnOrNull().orEmpty()
     print("insert new activity= ")
     val updatedActivity = readlnOrNull().orEmpty()
     print("insert new location= ")
     val updatedLocation = readlnOrNull().orEmpty()
 
-    if(lis.activities.containsKey(userUpdate)){
-        lis.activities[updatedActivity] = updatedLocation
+    var indicate = false;
+    lis.activities.forEach{(k) -> if(k == userUpdate){
+        lis.activities.remove(k)
+        act.name = updatedActivity
+        act.place = updatedLocation
+        lis.activities[act.name] = act.place
+        indicate = true
+        } else {
+            println("not found any valid key - updating failed to execute")
+        }
+    }
+
+    if(indicate){
         println("MESSAGE = Activity '$userUpdate' updated to '$updatedActivity' at '$updatedLocation'.")
     } else {
         println("not found any activities")
@@ -65,7 +80,7 @@ fun update(){
 fun delete(){
     print("insert the name you want to delete =")
     val userUpdate = readlnOrNull()
-    lis.activities.forEach{(k,v) ->
+    lis.activities.forEach{(k) ->
         if(k == userUpdate){
             lis.activities.remove(k)
         }

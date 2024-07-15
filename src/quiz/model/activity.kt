@@ -7,3 +7,4 @@ object activity {
         return "{\n activity : $name \n location at : $place \n}"
     }
 }
+

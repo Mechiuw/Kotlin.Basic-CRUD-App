@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64feb33c-924a-4559-b503-91d9a6ffc30e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/quiz/model/activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/model/activity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/quiz/service/todoservice.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/service/todoservice.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
