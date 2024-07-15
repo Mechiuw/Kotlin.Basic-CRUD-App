@@ -37,10 +37,3 @@ Prompts the user to enter the name of an activity. Prints the activity and its l
 
 #### `doAgain()`
 Prompts the user if they want to perform another operation. Exits the program if the answer is "no", returns to the main menu if "yes", and displays an error message for invalid input.
-
-## Example Usage
-
-```kotlin
-fun main() {
-    menu() // Starts the interactive menu for managing activities.
-}
