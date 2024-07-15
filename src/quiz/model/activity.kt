@@ -4,6 +4,6 @@ object activity {
     var place : String = ""
 
     fun formatted():String{
-        return "{ $name, $place }"
+        return "{\n activity : $name \n location at : $place \n}"
     }
 }

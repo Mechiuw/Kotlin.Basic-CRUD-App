@@ -13,9 +13,23 @@ fun addActivity(){
         act.name = userActions
         act.place = userPlaceActions
         lis.activities[act.name] = act.place
+        print("ADDED = ")
         println(act.formatted())
+        print("LIST = ")
+        println(lis.activities.toString())
+        doAgain()
     } else {
         println("Can't be null")
-        addActivity()
+        doAgain()
+    }
+}
+
+fun doAgain(){
+    println("try again?")
+    val ask = readlnOrNull();
+    when(ask){
+        "no" -> System.exit(0)
+        "yes" -> addActivity()
+        null -> println("wrong input")
     }
 }
