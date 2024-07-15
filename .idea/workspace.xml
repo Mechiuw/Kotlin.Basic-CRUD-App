@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64feb33c-924a-4559-b503-91d9a6ffc30e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/quiz/model/activity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/model/activity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/quiz/model/lists.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/quiz/model/lists.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package-info" />
-        <option value="Class" />
         <option value="Kotlin Class" />
+        <option value="Class" />
         <option value="Kotlin File" />
       </list>
     </option>
