@@ -7,7 +7,12 @@ fun run(){
 
     val arx = arrayOf("A","O","X","Y","C")
     println(findVariable(arx))
+    println("indicated Z? = ${indicator(arx)}")
 }
+
+
+//when is for switch case alt
+//if(a) b else c is for ternary alt
 
 fun ifelse(v:Any?):String{
         if (v != null) {
@@ -50,3 +55,8 @@ fun findVariable(x: Array<String>):String {
         "not found"
     }
 }
+
+fun indicator(x: Array<String>) :Boolean {
+    return x.contains("Z")
+}
+
