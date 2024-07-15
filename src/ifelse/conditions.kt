@@ -3,6 +3,10 @@ package ifelse
 fun run(){
     println(ifelse("hey"))
     println(refactoredIfElse(false))
+    println(ternaries(true))
+
+    val arx = arrayOf("A","O","X","Y","C")
+    println(findVariable(arx))
 }
 
 fun ifelse(v:Any?):String{
@@ -31,5 +35,18 @@ fun refactoredIfElse(v:Any?) :String{
         is Float -> "it is string data type"
         null -> "value can't be null"
         else -> "no data types found"
+    }
+}
+
+fun ternaries(v:Boolean):String{
+    return if(v) "true" else "false"
+}
+
+fun findVariable(x: Array<String>):String {
+    val index = x.asSequence().indexOf("X")
+    return if( index != -1){
+        index.toString();
+    } else {
+        "not found"
     }
 }
